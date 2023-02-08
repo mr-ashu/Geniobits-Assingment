@@ -23,11 +23,12 @@ import { SIGN_OUT } from "../Redux/Auth.type";
 
 export const Navbar = () => {
   const { isAuth } = useSelector((store) => store.auth);
-  console.log(isAuth);
+ 
   const dispatch = useDispatch();
   return (
     <div style={{ width:"100%"}}>
       <Box
+      textDecoration="none"
       position="fixed"
       top="0"
       left="0"
@@ -47,7 +48,7 @@ export const Navbar = () => {
           <HStack spacing={8} alignItems={"center"}>
             <Box> 
 
-              <Img h="100px" w="100%"  src="https://i.ibb.co/qBMkwDr/logo-removebg-preview.png" alt="" />
+             <Link to="/"> <Img h="100px" w="100%"  src="https://i.ibb.co/qBMkwDr/logo-removebg-preview.png" alt="" /></Link>
             </Box>
           </HStack>
 

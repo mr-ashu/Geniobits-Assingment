@@ -10,7 +10,7 @@ import {
   Stack,
   Flex,
   Checkbox,
-  Link,
+ 
   Box,
   ModalContent,
   ModalHeader,
@@ -30,7 +30,7 @@ import {
   MenuDivider,
 } from "@chakra-ui/react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../Redux/Auth.action";
 import { SIGN_OUT } from "../Redux/Auth.type";
 
@@ -49,6 +49,13 @@ export const Login = () => {
       };
       dispatch(login(payload)).then((res) => {
         onClose();
+        toast({
+            title: "Login successfully.",
+            status: "success",
+            duration: 3000,
+            position: "top",
+            isClosable: true,
+          });
       });
     }
   };
@@ -96,7 +103,7 @@ export const Login = () => {
             <MenuItem onClick={handleLogOut}>LogOut</MenuItem>
 
             <MenuDivider />
-            <MenuItem>User Dashboard</MenuItem>
+          <Link to="/user">  <MenuItem>User Dashboard</MenuItem></Link>
           </MenuList>
         </Menu>
       ) : (
