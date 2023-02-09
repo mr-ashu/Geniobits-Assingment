@@ -1,7 +1,7 @@
 # Realestate website
 
 <h1 align="centre">About</h1>
-<h2>Realestate  website is help to buy poroperty .</h2>
+<h2>Realestate  website is an individual Project and it is helpful to buy the property and contact the seller.</h2>
   
 # Tech Stacks :
 
