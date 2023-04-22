@@ -125,7 +125,7 @@ export const Login = () => {
           <ModalBody pb="20px">
             <label>Email</label>
             <Input mb="10px" onChange={(e) => setEmail(e.target.value)} value={email} />
-            <label    >Password</label>
+            <label >Password</label>
             <Input
          
               onChange={(e) => setPassword(e.target.value)}
