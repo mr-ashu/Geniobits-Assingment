@@ -52,17 +52,7 @@ export const Navbar = () => {
             </Box>
           </HStack>
 
-          <Flex gap="10px" width="50%">
-            <Input
-              _hover={{ borderColor: "tomato" }}
-              borderColor="teal"
-              color="white"
-              placeholder="Search Property By Location"
-            />
-            <Button bg="teal" _hover={{ bg: "tomato" }}>
-              Search
-            </Button>
-          </Flex>
+         
           <Flex alignItems={"center"} gap="20px" color="black" fontWeight="500">
             <Link to="/">PROPERTY</Link>
               {

@@ -179,6 +179,7 @@ export const PropertyList = () => {
                     {el.address}
                   </Text>
                   <Heading
+                  color={"tomato"}
                     fontSize={"2xl"}
                     fontFamily={"body"}
                     fontWeight={500}
@@ -186,7 +187,7 @@ export const PropertyList = () => {
                     {el.type}
                   </Heading>
                   <Stack direction={"row"} align={"center"}>
-                    <Text fontWeight={800} fontSize={"xl"}>
+                    <Text color={"gray"} fontWeight={800} fontSize={"xl"}>
                       {el.price}
                     </Text>
                     <Text textDecoration={"line-through"} color={"gray.600"}>
@@ -195,13 +196,16 @@ export const PropertyList = () => {
                   </Stack>
                   <Flex w="100%" justifyContent={"space-between"}>
                     <Button
+                    bg={"teal"}
+                    color="white"
+                    _hover={{bg:"pink"}}
                       onClick={() => sendmail(el.email)}
                       alignItems="center"
                       gap={"10px"}
                     >
                       Contact <EmailIcon margin="auto" />
                     </Button>
-                    <Button onClick={() => save(el._id)}>Save</Button>
+                    <Button bg="teal" color="white" _hover={{bg:"pink"}} onClick={() => save(el._id)}>Save</Button>
                   </Flex>
                 </Stack>
               </Box>

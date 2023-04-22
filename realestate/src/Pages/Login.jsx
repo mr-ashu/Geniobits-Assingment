@@ -124,9 +124,10 @@ export const Login = () => {
           <ModalCloseButton />
           <ModalBody pb="20px">
             <label>Email</label>
-            <Input onChange={(e) => setEmail(e.target.value)} value={email} />
-            <label>Password</label>
+            <Input mb="10px" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <label    >Password</label>
             <Input
+         
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />

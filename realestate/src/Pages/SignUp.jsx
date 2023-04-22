@@ -9,9 +9,46 @@ import {
     Link,
     Stack,
     Image,
+    useToast,
   } from '@chakra-ui/react';
+import axios from 'axios';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
   
   export default function Signup() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const toast = useToast();
+    const dispatch = useDispatch();
+    const { user, isAuth } = useSelector((store) => store.auth);
+  
+    const handleSignup = () => {
+      if (email && password) {
+        const payload = {
+          name,
+          email,
+          phone,
+          password,
+        };
+         
+        axios.post(`https://job-eadj.onrender.com/signup`,payload).then((res)=>{
+          toast({
+            title: "Signup successfully.",
+            status: "success",
+            duration: 3000,
+            position: "top",
+            isClosable: true,
+          });
+        })
+        
+        
+      
+      }
+    };
+
+
     return (
       <Stack minH={'90vh'} marginTop="60px" direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -19,23 +56,23 @@ import {
             <Heading fontSize={'2xl'}>Signup Your Account</Heading>
             <FormControl >
               <FormLabel>Name</FormLabel>
-              <Input type="text" />
+              <Input value={name} onChange={(e)=>setName(e.target.value)}  type="text" />
             </FormControl>
             <FormControl id="email">
               <FormLabel>Email Address</FormLabel>
-              <Input type="email" />
+              <Input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" />
             </FormControl>
             <FormControl  >
               <FormLabel>Mobile No.</FormLabel>
-              <Input type="number" />
+              <Input value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" />
             </FormControl>
             <Stack spacing={6}>
           
-              <Button colorScheme={'teal'} variant={'solid'}>
+              <Button onClick={handleSignup} colorScheme={'teal'} variant={'solid'}>
                 Submit
               </Button>
             </Stack>
